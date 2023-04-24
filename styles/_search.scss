@@ -1,0 +1,31 @@
+@use 'variables' as var;
+@use 'mixins' as mix;
+
+.search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid var.$text-color;
+    border-radius: 3rem;
+
+    &-input {
+        width: 100%;
+        padding: .5rem 1em .5em 2rem;
+        border: none;
+        background: transparent;
+
+        &::placeholder {
+            color: var.$text-color;
+        }
+    }
+
+    &::before {
+        position: absolute;
+        left: .5em;
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        background: url('file:///Users/elma/PhpstormProjects/cloudsuiteCase/images/search.svg');
+    }
+}

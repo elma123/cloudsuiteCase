@@ -1,0 +1,10 @@
+@use 'variables' as var;
+@use 'mixins' as mix;
+
+.main {
+    .inner {
+        padding: 3rem 0;
+        @include mix.contentWidth;
+        text-align: center;
+    }
+}

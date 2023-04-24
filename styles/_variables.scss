@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+
+/** Colors **/
+$primary-color: #F6D524;
+$secondary-color: #83B6D2;
+$text-color: #4B4B4B;
+$neutral-100: #fff;
+
+/** Max width **/
+$content-width: 1680px;
+
+/** Fonts **/
+$font-family: 'Myriad Pro', sans-serif;
+$font-family-special: 'Gochi Hand', cursive;
+$body-size: 1rem;
+$title-size: 4.9rem;
+
+/** Components **/
+$header-mobile-height: 64px;
+$header-height: 100px;
+$header-background: $neutral-100;
+
+$hero-content-width: 700px;
+$hero-background: $secondary-color;
+
+$menu-item-color: $text-color;
+
+$input-border-color: #4B4B4B;
+$search-width: 310px;

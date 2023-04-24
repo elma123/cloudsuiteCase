@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
+/** Colors **/
+/** Max width **/
+/** Fonts **/
+/** Components **/
+.button {
+  display: flex;
+  width: max-content;
+  padding: 0.5em 1em;
+  color: #fff;
+  border-radius: 3rem;
+  text-decoration: none;
+  font-weight: 700;
+  background: #F6D524;
+}
+
+.button.primary {
+  display: flex;
+  width: max-content;
+  padding: 0.5em 1em;
+  color: #fff;
+  border-radius: 3rem;
+  text-decoration: none;
+  font-weight: 700;
+  background: #F6D524;
+}
+
+html {
+  font-size: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: "Myriad Pro", sans-serif;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.icon-arrow-down::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  content: "\f107";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-arrow-up::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  content: "\f106";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-user::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  content: "\f007";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hide-mobile {
+  position: relative;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+@media (min-width: 1200px) {
+  .hide-mobile {
+    height: auto;
+    width: auto;
+    overflow: inherit;
+    opacity: 1;
+  }
+}
+.hide-mobile.search {
+  width: 0;
+}
+@media (min-width: 1200px) {
+  .hide-mobile.search {
+    width: auto;
+  }
+}
+.hide-mobile.show {
+  height: auto;
+  width: auto;
+  opacity: 1;
+  overflow: inherit;
+}
+
+.toggle-nav {
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 1200px) {
+  .toggle-nav {
+    display: none;
+  }
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.nav li.has-children {
+  position: relative;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+}
+.nav li.has-children > .nav-item {
+  display: flex;
+  width: max-content;
+  padding: 0.5em 1em;
+  color: #fff;
+  border-radius: 3rem;
+  text-decoration: none;
+  font-weight: 700;
+  background: #F6D524;
+  color: #4B4B4B;
+  background: transparent;
+}
+.nav li.has-children > .nav-item::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  content: "\f107";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+@media (min-width: 1200px) {
+  .nav li.has-children:hover > .nav-item {
+    background: #F6D524;
+  }
+}
+.nav li.has-children:hover > .nav-item::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  content: "\f106";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.nav li.has-children:hover > .nav-item + ul {
+  visibility: visible;
+  opacity: 1;
+  display: flex;
+}
+.nav .nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: #4B4B4B;
+  font-weight: 700;
+}
+.nav .dropdown {
+  position: absolute;
+  left: 0;
+  visibility: hidden;
+  width: 20rem;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  display: none;
+  opacity: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  transition: all 0.5s ease;
+}
+.nav.show {
+  -webkit-transition: left 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+  transition: left 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+}
+@media (max-width: 1200px) {
+  .nav.show {
+    position: fixed;
+    background: #fff;
+    inset: 0;
+    padding-top: 64px;
+  }
+}
+@media (max-width: 1200px) {
+  .nav.show ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+}
+@media (max-width: 1200px) {
+  .nav.show li.has-children, .nav.show a.parent {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #4B4B4B;
+  border-radius: 3rem;
+}
+.search-input {
+  width: 100%;
+  padding: 0.5rem 1em 0.5em 2rem;
+  border: none;
+  background: transparent;
+}
+.search-input::placeholder {
+  color: #4B4B4B;
+}
+.search::before {
+  position: absolute;
+  left: 0.5em;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  background: url("file:///Users/elma/PhpstormProjects/cloudsuiteCase/images/search.svg");
+}
+
+.header {
+  position: fixed;
+  z-index: 1;
+  inset: 0 0 auto;
+  height: 64px;
+  background: transparent;
+}
+@media (min-width: 1200px) {
+  .header {
+    height: 100px;
+  }
+}
+.header.active {
+  background-color: #fff;
+  transition: background-color 200ms linear;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+}
+.header .inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1680px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  height: inherit;
+}
+.header .logo {
+  justify-self: center;
+}
+.header .search-nav {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+@media (min-width: 1200px) {
+  .header .search-nav {
+    grid-template-columns: 1fr max-content max-content;
+  }
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(0deg, rgba(131, 182, 210, 0.9), rgba(131, 182, 210, 0.9)), url("file:///Users/elma/PhpstormProjects/cloudsuiteCase/images/hero-background.jpg");
+  background-size: cover;
+}
+.hero .inner {
+  display: flex;
+  align-items: center;
+  max-width: 1680px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  height: 100%;
+}
+.hero .content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 700px;
+  margin-left: 7vw;
+}
+.hero .title {
+  margin-top: 0;
+  font-family: "Gochi Hand", cursive;
+  font-size: clamp(2rem, 7vw + 2rem, 4.9rem);
+  color: #fff;
+}
+.hero .button {
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+}
+
+.main .inner {
+  padding: 3rem 0;
+  max-width: 1680px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

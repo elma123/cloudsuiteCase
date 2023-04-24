@@ -1,0 +1,38 @@
+@use 'variables' as var;
+
+@mixin contentWidth($width: var.$content-width) {
+    max-width: $width;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+@mixin button($type: var.$primary-color) {
+    display: flex;
+    width: max-content;
+    padding: .5em 1em;
+    color: #fff;
+    border-radius: 3rem;
+    text-decoration: none;
+    font-weight: 700;
+    background: $type;
+}
+
+@mixin icon($type) {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 700;
+    content: $type;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.button {
+    @include button;
+}
+
+.button.primary {
+    @include button(var.$primary-color);
+}
+

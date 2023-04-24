@@ -1,0 +1,47 @@
+@use 'variables' as var;
+@use 'mixins' as mix;
+@use 'nav';
+@use 'search';
+
+.header {
+    position: fixed;
+    z-index: 1;
+    inset: 0 0 auto;
+    height: var.$header-mobile-height;
+    background: transparent;
+
+    @media (min-width: 1200px) {
+        height: var.$header-height;
+    }
+
+    &.active {
+        background-color: var.$header-background;
+        transition: background-color 200ms linear;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .inner {
+        display: grid;
+        grid-template-columns: 2fr 1fr 2fr;
+        align-items: center;
+        gap: 1rem;
+        @include mix.contentWidth;
+        height: inherit;
+    }
+
+    .logo {
+        justify-self: center;
+    }
+
+    .search-nav {
+        display: grid;
+        grid-template-columns: max-content max-content;
+        gap: 1rem;
+        align-items: center;
+        justify-content: flex-end;
+
+        @media (min-width: 1200px) {
+            grid-template-columns: 1fr max-content max-content;
+        }
+    }
+}
