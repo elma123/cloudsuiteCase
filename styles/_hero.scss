@@ -2,11 +2,22 @@
 @use 'mixins' as mix;
 
 .hero {
+    position: relative;
+    overflow: hidden;
     height: 100vh;
-    background: linear-gradient(0deg, rgba(131, 182, 210, 0.9), rgba(131, 182, 210, 0.9)), url('file:///Users/elma/PhpstormProjects/cloudsuiteCase/images/hero-background.jpg');
-    background-size: cover;
+    background: rgba(131, 182, 210, 0.9);
+
+    .background {
+        position: absolute;
+        inset: 0;
+        height: 100vh;
+        content: '';
+        background: linear-gradient(0deg, rgba(131, 182, 210, 0.9), rgba(131, 182, 210, 0.9)), url('file:///Users/elma/PhpstormProjects/cloudsuiteCase/images/hero-background.jpg');
+        background-size: cover;
+    }
 
     .inner {
+        position: relative;
         display: flex;
         align-items: center;
         @include mix.contentWidth;
@@ -22,6 +33,7 @@
     }
 
     .title {
+        position: relative;
         margin-top: 0;
         font-family: var.$font-family-special;
         font-size: clamp(2rem, 7vw + 2rem, #{var.$title-size});
@@ -29,6 +41,7 @@
     }
 
     .button {
+        position: relative;
         box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
     }
 }

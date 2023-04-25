@@ -295,11 +295,21 @@ h1 {
 }
 
 .hero {
+  position: relative;
+  overflow: hidden;
   height: 100vh;
+  background: rgba(131, 182, 210, 0.9);
+}
+.hero .background {
+  position: absolute;
+  inset: 0;
+  height: 100vh;
+  content: "";
   background: linear-gradient(0deg, rgba(131, 182, 210, 0.9), rgba(131, 182, 210, 0.9)), url("file:///Users/elma/PhpstormProjects/cloudsuiteCase/images/hero-background.jpg");
   background-size: cover;
 }
 .hero .inner {
+  position: relative;
   display: flex;
   align-items: center;
   max-width: 1680px;
@@ -315,12 +325,14 @@ h1 {
   margin-left: 7vw;
 }
 .hero .title {
+  position: relative;
   margin-top: 0;
   font-family: "Gochi Hand", cursive;
   font-size: clamp(2rem, 7vw + 2rem, 4.9rem);
   color: #fff;
 }
 .hero .button {
+  position: relative;
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
 }
 
